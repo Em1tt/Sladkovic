@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Andrej Sládkovič</title>
+    <link rel="stylesheet" href="./index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+    <noscript>
+        <style>
+            loading {
+                display: none;
+            }
+        </style>
+    </noscript>
+    <style>
+        .hidden{
+            opacity: 0;
+            transition: 0.5s ease;
+        }
+        loading {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 2rem;
+            transition: 0.5s ease;
+            background-color: #201f38;
+            z-index: 1000;
+        }
+        loading svg{
+            animation: 1s linear rotate infinite;
+            color: #ff4848;
+            filter: drop-shadow(0 0 5px #ff4848) drop-shadow(0 0 10px #ff4848) drop-shadow(0 0 20px #ff4848) drop-shadow(0 0 40px #ff4848);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="grid">
+    <loading>
+        <i class="fas fa-spinner"></i>
+    </loading>
+    <nav>
+        <a class="active" href="#domov">Domov</a>
+        <a href="#info">Info</a>
+        <a href="#domov">Život</a>
+        <a href="#domov">Profesie</a>
+        <a href="#domov">Diela</a>
+        <a href="#domov">Kvíz</a>
+    </nav>
+    <header id="domov" class="grid">
+        <div>
+            <h1 class="animate-top" data-delay="500">Andrej Braxatoris Sládkovič</h1>
+            <h2 class="normal animate-top" data-delay="1000">* 30.3. 1820 | † 20.4.1872</h2>
+        </div>
+        <img class="animate-right" data-delay="1500" width="400" src="./images/Sladkovič.webp">
+    </header>
+    <main>
+        <div id="info">
+            <h2>Základné informácie</h2>
+            <p>Paťo</p>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector("loading").classList.add("hidden");
+            setTimeout(()=>{
+                document.querySelector("loading").style = "display: none";
+            },1000)
+         }, false);
+         window.addEventListener("beforeunload", async () => {
+            document.querySelector("loading").style = "display: grid";
+            return document.querySelector("loading").classList.remove("hidden");
+         }, false);
+    </script>
+    <script defer src="./high-contrast.js"></script>
+    <script src="./animate.js" defer></script>
+    <script src="./scroll-manager.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,900;1,500;1,900&display=swap');
+
+.grid{
+    display: grid;
+}
+
+:root{
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+}
+
+nav{
+    display: flex;
+    flex-flow: nowrap row;
+    column-gap: 20px;
+    justify-content: center;
+    width: 100vw;
+    padding: 10px 0 10px 0;
+    height: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #201f38;
+    z-index: 200;
+    transition: 1s ease;
+}
+nav.scrolled{
+    background: #18182b;
+    transition: 1s ease;
+}
+nav a{
+    color: var(--less);
+    text-decoration: none;
+    cursor: pointer;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+
+nav a.active{
+    color: #ff4848;
+    text-shadow: 0 0 50px #ff4848
+        0 0 200px #ff4848;
+    font-weight: bold;
+}
+
+body{
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content;
+    background: #201f38;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    --less: #3c4373;
+}
+.hc{
+    --less: white;
+}
+header{
+    height: fit-content;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    width: 100vw;
+}
+header div{
+    margin-top: 30%;
+}
+header img{
+    width: 100%;
+    max-width: 600px;
+}
+:is(header h1, h2){
+    color: #ff4848;
+    text-shadow: 
+        0 0 500px #ff4848;
+    margin-left: 10%;
+    width: max-content;
+    position: relative;
+    word-break: break-all;
+    line-break:normal;
+}
+:is(header h2){
+    color: var(--less);
+    width: max-content;
+    margin-left: 10%;
+}
+
+.slide-in-top{
+    animation: 1s ease slide-top;
+    animation-fill-mode: forwards;
+}
+.slide-in-right{
+    animation: 1s ease slide-right;
+    animation-fill-mode: forwards;
+}
+
+.bold{
+    font-weight: bold;
+}
+.normal{
+    font-weight: normal;
+}
+
+.animate-top{
+    position: relative;
+    top: -50px;
+    opacity: 0;
+}
+.animate-right{
+    position: relative;
+    right: -50px;
+    opacity: 0;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+main > div{
+    padding-inline: 10%;
+}
+main > div :is(h2){
+    margin-inline: 0;
+}
+
+@media screen and (max-width: 1000px){
+    header{
+        height: fit-content;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+    header h1{
+        margin-inline: auto;
+    }
+    :is(header h2){
+        margin-inline: auto;
+    }
+}
+
+@keyframes slide-top{
+    0%{
+        position: relative;
+        top: -50px;
+        opacity: 0;
+    }
+    100%{
+        position: relative;
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right{
+    0%{
+        position: relative;
+        right: -50px;
+        opacity: 0;
+    }
+    100%{
+        position: relative;
+        right: 0;
+        opacity: 1;
+    }
+}
