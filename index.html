@@ -56,6 +56,10 @@
         <i class="fas fa-spinner"></i>
     </loading>
     <nav>
+        <label class="switch">
+            <input id="hcToggle" type="checkbox">
+            <span class="slider round"></span>
+        </label>
         <a class="active" href="#domov">Domov</a>
         <a href="#info">Info</a>
         <a href="#domov">Život</a>
@@ -66,14 +70,28 @@
     <header id="domov" class="grid">
         <div>
             <h1 class="animate-top" data-delay="500">Andrej Braxatoris Sládkovič</h1>
-            <h2 class="normal animate-top" data-delay="1000">* 30.3. 1820 | † 20.4.1872</h2>
+            <h2 class="normal animate-top" data-delay="1000">Slovenský básnik</h2>
         </div>
-        <img class="animate-right" data-delay="1500" width="400" src="./images/Sladkovič.webp">
+        <img class="animate-right" data-delay="1500" width="600px" height="694px" src="./images/Sladkovič.webp">
     </header>
+    <div id="tsparticles"></div>
     <main>
         <div id="info">
-            <h2>Základné informácie</h2>
-            <p>Paťo</p>
+            <span>
+                <i class="fas fa-birthday-cake"></i>
+                <h2>30.3.1820</h2>
+                <p>Krupina</p>
+            </span>
+            <span>
+                <i class="fas fa-heart"></i>
+                <h2>Antónia</h2>
+                <p>Júlia Sekovičová</p>
+            </span>
+            <span>
+                <i class="fas fa-book-dead"></i>
+                <h2>20.4.1872</h2>
+                <p>Radvaň</p>
+            </span>
         </div>
     </main>
     <script>
