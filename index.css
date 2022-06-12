@@ -3,6 +3,9 @@
 .grid{
     display: grid;
 }
+* {
+    box-sizing: border-box;
+  }
 
 :root{
     overflow-x: hidden !important;
@@ -58,11 +61,13 @@ body{
 }
 header{
     height: fit-content;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 50px;
+    column-gap: 0;
     width: 100vw;
 }
 header div{
+    padding-inline: 20%;
     margin-top: 30%;
 }
 header img{
@@ -120,6 +125,242 @@ header img{
     color: #ff4848;
     filter: drop-shadow(0 0 100px #ff4848);
 }
+#info > div{
+    width: 100%;
+    margin-top: 100px;
+    background-color: rgb(32, 31, 56);
+    border-radius: 50px;
+    padding: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 
+        -5px -5px 10px rgba(62, 61, 100, 0.1),
+        5px 5px 10px rgba(9, 8, 15, 0.1);
+}
+#info > div h2{
+    margin-inline: 0;
+    width: 100%;
+    text-align: center;
+}
+#timeline-wrapper > div.iconWrapper{
+    margin: 20px 0 20px 0;
+    width: 100%;
+}
+#timeline-wrapper > div.iconWrapper > svg{
+    color:#ff4848;
+    font-size: 1.5rem;
+}
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    height:fit-content;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #18182b;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 15px;
+  }
+  
+  /* Container around content */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+
+  .container svg {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: -8px;
+    top: 19px;
+    z-index: 10;
+    transform: scale(0);
+    transition: 0.5s ease;
+    color: #18182b;
+  }
+
+  /* The circles on the timeline */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: -17px;
+    background-color: #201f38;
+    border: 4px solid #18182b;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.5s ease-in;
+  }
+  .container.activated::after {
+    width: 30px;
+    height: 30px;
+    right: -19px;
+    background-color: #ff4848;
+    top: 12px;
+    transition: 0.5s ease-in;
+  }
+  
+  .container svg.shown{
+    animation: 0.5s ease icon-pop;
+    animation-fill-mode: forwards;
+    transition: 0.5s ease;
+  }
+
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+
+  .container.right svg {
+    left: -7px;
+  }
+
+  #fa-birthday-cake{
+      right: -7px;
+      top: 18px;
+  }
+  #fa-theater-masks{
+    left: -9px;
+    top: 18px;
+}
+#fa-diagnoses{
+    right: -10px;
+    top: 17px;
+}
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #18182b;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #18182b transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  .container.activated.right::after {
+    width: 30px;
+    height: 30px;
+    left: -19px;
+    background-color: #ff4848;
+    top: 12px;
+    transition: 0.5s ease;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: #18182b;
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 800px) {
+    .container svg.shown {
+        animation: 0.5s ease icon-pop-smaller;
+        animation-fill-mode: forwards;
+      }
+
+    #timeline-wrapper > div.iconWrapper{
+        color:#ff4848;
+        display: flex;
+        justify-content: start;
+    }
+    #timeline-wrapper > div.iconWrapper svg{
+        color:#ff4848;
+        width: fit-content;
+        margin-left: 18px;
+    }
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Full-width containers */
+    .container {
+    left: 30px;
+      width: 100%;
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 30px;
+      border: medium solid #18182b;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #18182b transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: -16px;
+    }
+    .left.activated::after, .right.activated::after {
+        height: 26px !important;
+        width: 26px !important;
+        background-color: #ff4848 !important;
+        top: 15px !important;
+        transition: 0.5s ease !important;
+    }
+    .right.activated::after{
+        left: -16px !important;
+    }
+    .container svg {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        left: -7px;
+        top: 19px;
+        z-index: 10;
+        transform: scale(0);
+        transition: 0.5s ease;
+        color: #18182b;
+    }
+  }
 
 .slide-in-top{
     animation: 1s ease slide-top;
@@ -127,6 +368,10 @@ header img{
 }
 .slide-in-right{
     animation: 1s ease slide-right;
+    animation-fill-mode: forwards;
+}
+.slide-in-bottom{
+    animation: 1s ease slide-bottom;
     animation-fill-mode: forwards;
 }
 
@@ -145,6 +390,11 @@ header img{
 .animate-right{
     position: relative;
     right: -50px;
+    opacity: 0;
+}
+.animate-bottom{
+    position: relative;
+    bottom: -50px;
     opacity: 0;
 }
 
@@ -223,11 +473,21 @@ main > div :is(h2){
         grid-template-columns: repeat(1, 1fr);
         justify-items: center;
     }
+    header div{
+        padding-inline: 0%;
+    }
     header h1{
         margin-inline: auto;
     }
     :is(header h2){
         margin-inline: auto;
+    }
+    #info img{
+        width: 100%;
+    }
+    #info > div > div{
+        max-width: unset;
+        width: 100%;
     }
 }
 
@@ -254,5 +514,34 @@ main > div :is(h2){
         position: relative;
         right: 0;
         opacity: 1;
+    }
+}
+@keyframes slide-bottom{
+    0%{
+        position: relative;
+        bottom: -50px;
+        opacity: 0;
+    }
+    100%{
+        position: relative;
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes icon-pop{
+    0%{
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+@keyframes icon-pop-smaller{
+    0%{
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1.0);
     }
 }
