@@ -48,6 +48,11 @@
     });
 })();
 
+function sectionPastMiddle(element){
+    const rect = element.getBoundingClientRect();
+    return window.innerHeight/2 > parseInt(rect.top);
+}
+
 function isInMiddle(element) {
     const rect = element.getBoundingClientRect();
     return window.innerHeight/2+parseInt(element.clientHeight)/2 > parseInt(rect.top);

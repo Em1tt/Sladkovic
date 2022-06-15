@@ -81,7 +81,6 @@ h1{
     color: #ff4848;
     text-shadow: 
         0 0 250px #ff4848;
-    margin-left: 10%;
     width: 100%;
     position: relative;
     word-break:normal;
@@ -424,13 +423,25 @@ main > div :is(h2){
   section.quote2{
     background-color: #201F38;
     opacity: 1;
-    background-image:  linear-gradient(135deg, #201F38 25%, transparent 25%), linear-gradient(225deg, #201F38 25%, transparent 25%), linear-gradient(45deg, #201F38 25%, transparent 25%), linear-gradient(315deg, #201F38 25%, hsl(242, 29%, 14%) 25%);
+    background-image:  linear-gradient(135deg, #201F38 25%, transparent 25%), linear-gradient(225deg, #201F38 25%, transparent 25%), linear-gradient(45deg, #201F38 25%, transparent 25%), linear-gradient(315deg, #201F38 25%, #1a192e 25%);
     background-position:  10px 0, 10px 0, 0 0, 0 0;
     background-size: 20px 20px;
     background-repeat: repeat;
   }
+  section.quote3{
+    background-color: #1a192e;
+opacity: 0.8;
+background-image:  linear-gradient(#201F38 3.8000000000000003px, transparent 3.8000000000000003px), linear-gradient(90deg, #201F38 3.8000000000000003px, transparent 3.8000000000000003px), linear-gradient(#201F38 1.9000000000000001px, transparent 1.9000000000000001px), linear-gradient(90deg, #201F38 1.9000000000000001px, #1a192e 1.9000000000000001px);
+background-size: 95px 95px, 95px 95px, 19px 19px, 19px 19px;
+background-position: -3.8000000000000003px -3.8000000000000003px, -3.8000000000000003px -3.8000000000000003px, -1.9000000000000001px -1.9000000000000001px, -1.9000000000000001px -1.9000000000000001px;  }
   section[class*=quote] h2{
     margin-inline: auto;
+  }
+  section.quote4{
+    background-color: #1a192e;
+opacity: 0.8;
+background-size: 19px 19px;
+background-image: repeating-linear-gradient(45deg, #201F38 0, #201F38 1.9000000000000001px, #1a192e 0, #1a192e 50%);
   }
   section[class*=quote] h2 p{
     text-align: right;
@@ -463,7 +474,7 @@ main > div :is(h2){
     flex-flow: row wrap;
   }
   article > div > div:first-of-type{
-    width: 30%;
+    width: fit-content;
     display: flex;
     flex-flow: column nowrap;
   }
@@ -477,6 +488,25 @@ main > div :is(h2){
   article > div > div:last-of-type :is(p, ul){
     margin: 20px;
     font-size: 1rem;
+  }
+  h2 a{
+    color: #ff4848;
+    cursor: pointer;
+  }
+  h2 a:hover{
+    color: #FFF;
+  }
+
+  @media screen and (max-width: 852px){
+    article > div > div:first-of-type{
+      width: 100%;
+      align-items: center;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+    article > div > div:last-of-type{
+      width: 100%;
+    }
   }
 
   @media screen and (max-width: 800px) {
