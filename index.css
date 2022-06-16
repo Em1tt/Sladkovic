@@ -662,6 +662,9 @@ background-image: repeating-linear-gradient(45deg, #201F38 0, #201F38 1.90000000
         transition: 0.5s ease;
         color: #18182b;
     }
+    aside > form > fieldset > div{
+      width: 100%;
+    }
   }
 
   h2 code{

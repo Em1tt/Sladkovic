@@ -28,10 +28,10 @@ quiz.addEventListener("submit", (event) => {
             document.querySelector("end h2").classList.add("slide-to-top");
             setTimeout(() => {
                 document.querySelector("end").style = "display: grid; transition: 2s ease; opacity: 0;";
-            }, 10000);
+            }, 6000);
             setTimeout(() => {
                 document.querySelector("end").style = "";
-            },12000);
+            },8000);
         }
       })
 });
