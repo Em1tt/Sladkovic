@@ -114,6 +114,13 @@ h1{
     top: -50px;
     border-radius: 50px 50px 0 0;
 }
+#info span:first-of-type{
+  width: 100%;
+  text-align: left;
+}
+#info span:first-of-type div{
+  margin: 0 5% 100px 5%
+}
 #info span{
     width: 30%;
     text-align: center;
