@@ -56,6 +56,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="grid">
@@ -137,7 +138,7 @@
                     <div class="container right" id="theater-masks">
                         <div class="content">
                           <h2>1841</h2>
-                          <p>Spolu so Samuelom Jurkovičom založili slovenské národné divadalo v Sobotišti</p>
+                          <p>Spolu so Samuelom Jurkovičom založili slovenské národné divadlo v Sobotišti</p>
                         </div>
                         <i class="fas fa-theater-masks" id="fa-theater-masks"></i>
                     </div>
@@ -279,8 +280,242 @@
         </div>
     </article>
     <section class="quote4">
-        <h2>„Skutočný priateľ sa nespozná podľa toho, koľko času so mnou strávil, ale podľa toho, koľko ho obetoval, aby mi niečo dal..“<p>- Andrej Sládkovič</p></h2>
+        <h2>„Skutočný priateľ sa nespozná podľa toho, koľko času so mnou strávil, ale podľa toho, koľko ho obetoval, aby mi niečo dal..“<p class="white">- Andrej Sládkovič</p></h2>
     </section>
+    <aside id="kvíz">
+        <form id="kvizForm">
+            <!--Well Played, you got me... this time... -->
+            <h2>Kvíz</h2>
+            <fieldset>
+                <div>
+                    <p>1. Kedy sa narodil Andrej Sládkovič?</p>
+                    <span>
+                        <div class="checkbox" id="a">
+                            <input type="radio" name="narodenie" id="narodenie-1" value=1>
+                            <label for="narodenie-1"></label>
+                        </div>
+                        <label>23.9.2005</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="b">
+                            <input type="radio" name="narodenie" class="correct" id="narodenie-2" value=2>
+                            <label for="narodenie-2"></label>
+                        </div>
+                        <label>30.3.1820</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="c">
+                            <input type="radio" name="narodenie" id="narodenie-3" value=3>
+                            <label for="narodenie-3"></label>
+                        </div>
+                        <label>30.3.1920</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="d">
+                            <input type="radio" name="narodenie" id="narodenie-4" value=4>
+                            <label for="narodenie-4"></label>
+                        </div>
+                        <label>24.8.1854</label>
+                    </span>
+                </div>
+                <div>
+                    <p>2. Na aké ochorenie umrel?</p>
+                    <span>
+                        <div class="checkbox" id="e">
+                            <input type="radio" name="ochorenie" id="ochorenie-1" value=1>
+                            <label for="ochorenie-1"></label>
+                        </div>
+                        <label>Tuberkulóza</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="f">
+                            <input type="radio" name="ochorenie" id="ochorenie-2" value=2>
+                            <label for="ochorenie-2"></label>
+                        </div>
+                        <label>Chrípka</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="g">
+                            <input type="radio" name="ochorenie" class="correct" id="ochorenie-3" value=3>
+                            <label for="ochorenie-3"></label>
+                        </div>
+                        <label>Vodnatieľka</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="h">
+                            <input type="radio" name="ochorenie" id="ochorenie-4" value=4>
+                            <label for="ochorenie-4"></label>
+                        </div>
+                        <label>Covid-19</label>
+                    </span>
+                </div>
+                <div>
+                    <p>3. Aké bolo priezvisko Maríny?</p>
+                    <span>
+                        <div class="checkbox" id="i">
+                            <input type="radio" name="priezvisko" class="correct" id="priezvisko-1" value=1>
+                            <label for="priezvisko-1"></label>
+                        </div>
+                        <label>Pišlová</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="j">
+                            <input type="radio" name="priezvisko" id="priezvisko-2" value=2>
+                            <label for="priezvisko-2"></label>
+                        </div>
+                        <label>Bartolomeides</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="k">
+                            <input type="radio" name="priezvisko" id="priezvisko-3" value=3>
+                            <label for="priezvisko-3"></label>
+                        </div>
+                        <label>Kuzmányová</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="l">
+                            <input type="radio" name="priezvisko" id="priezvisko-4" value=4>
+                            <label for="priezvisko-4"></label>
+                        </div>
+                        <label>Hodžová</label>
+                    </span>
+                </div>
+                <div>
+                    <p>4. Bol Andrej Sládkovič kňazom?</p>
+                    <span>
+                        <div class="checkbox" id="m">
+                            <input type="radio" name="kňaz" class="correct" id="kňaz-1" value=1>
+                            <label for="kňaz-1"></label>
+                        </div>
+                        <label>Áno</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="n">
+                            <input type="radio" name="kňaz" id="kňaz-2" value=2>
+                            <label for="kňaz-2"></label>
+                        </div>
+                        <label>Nie</label>
+                    </span>
+                </div>
+                <div>
+                    <p>5. Spojil osud Marínu so Sládkovičom?</p>
+                    <span>
+                        <div class="checkbox" id="o">
+                            <input type="radio" name="osud" id="osud-1" value=1>
+                            <label for="osud-1"></label>
+                        </div>
+                        <label>Áno</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="p">
+                            <input type="radio" class="correct" name="osud" id="osud-2" value=2>
+                            <label for="osud-2"></label>
+                        </div>
+                        <label>Nie</label>
+                    </span>
+                </div>
+                <div>
+                    <p>6. Koľko spevov obsahuje Detvan?</p>
+                    <span>
+                        <div class="checkbox" id="q">
+                            <input type="radio" name="detvan" id="detvan-1" value=1>
+                            <label for="detvan-1"></label>
+                        </div>
+                        <label>2</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="r">
+                            <input type="radio" name="detvan" id="detvan-2" value=2>
+                            <label for="detvan-2"></label>
+                        </div>
+                        <label>3</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="s">
+                            <input type="radio" name="detvan" id="detvan-3" value=3>
+                            <label for="detvan-3"></label>
+                        </div>
+                        <label>4</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="t">
+                            <input type="radio" class="correct" name="detvan" id="detvan-4" value=4>
+                            <label for="detvan-4"></label>
+                        </div>
+                        <label>5</label>
+                    </span>
+                </div>
+                <div>
+                    <p>7. Čím sa inšpiroval pri písaní diel?</p>
+                    <span>
+                        <div class="checkbox" id="u">
+                            <input type="radio" name="inšpirácia" id="inšpirácia-1" value=1>
+                            <label for="inšpirácia-1"></label>
+                        </div>
+                        <label>Vierovyznaním</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="v">
+                            <input type="radio" name="inšpirácia" id="inšpirácia-2" value=2>
+                            <label for="inšpirácia-2"></label>
+                        </div>
+                        <label>Prírodou</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="w">
+                            <input type="radio" name="inšpirácia" class="correct" id="inšpirácia-3" value=3>
+                            <label for="inšpirácia-3"></label>
+                        </div>
+                        <label>Osobnými zážitkami, pocitmi</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="x">
+                            <input type="radio" name="inšpirácia" id="inšpirácia-4" value=4>
+                            <label for="inšpirácia-4"></label>
+                        </div>
+                        <label>Inými dielmi iných autorov</label>
+                    </span>
+                </div>
+                <div>
+                    <p>8. Hlavne koho diela prekladal?</p>
+                    <span>
+                        <div class="checkbox" id="y">
+                            <input type="radio" class="correct" name="preklad" id="preklad-1" value=1>
+                            <label for="preklad-1"></label>
+                        </div>
+                        <label>Voltaire</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="z">
+                            <input type="radio" name="preklad" id="preklad-2" value=2>
+                            <label for="preklad-2"></label>
+                        </div>
+                        <label>Mickiewicz</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="aa">
+                            <input type="radio" name="preklad" id="preklad-3" value=3>
+                            <label for="preklad-3"></label>
+                        </div>
+                        <label>Azevedo</label>
+                    </span>
+                    <span>
+                        <div class="checkbox" id="ab">
+                            <input type="radio" name="preklad" id="preklad-4" value=4>
+                            <label for="preklad-4"></label>
+                        </div>
+                        <label>Wordsworth</label>
+                    </span>
+                </div>
+            </fieldset>
+            <button type="submit">Skontrolovať</button>
+        </form>
+    </aside>
+    <end>
+        <h2>Ďakujeme za pozornosť<br>        <code>
+            HTML: 538 riadkov<br>CSS: 783 riadkov<br>JavaScript: 123 riadkov
+        </code></h2>
+    </end>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelector("loading").classList.add("hidden");
@@ -296,6 +531,7 @@
     <script defer src="./high-contrast.js"></script>
     <script src="./animate.js" defer></script>
     <script src="./scroll-manager.js"></script>
+    <script src="./formHandler.js"></script>
 </body>
 
 </html>
