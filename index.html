@@ -58,6 +58,7 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intense-images/1.0.7/intense.min.js" integrity="sha512-X35J3dtfmLn19L+UMQ6OowCnruuACN8zvsJqifs8bDU24wIF/44yP6LsZAWp4YcGJFV7vcw/A6hIgObOqAx0Tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="grid">
@@ -83,6 +84,21 @@
         </div>
         <img class="animate-right" alt="Andrej Sládkovič" data-delay="1500" width="600px" height="694px" src="./images/Sladkovič.webp">
     </header>
+        <section id="comicWrapper">
+            <h2>Komiks</h2>
+            <div>
+                <p>Strana 1</p>
+                <img id="comic1" src="./images/comic1.jpg">
+            </div>
+            <div>
+                <p>Strana 2</p>
+                <img id="comic2" src="./images/comic2.jpg">
+            </div>
+            <div>
+                <p>Strana 3</p>
+                <img id="comic3" src="./images/unknown.png">
+            </div>
+        </section>
         <div id="info" class="animate-bottom" data-delay="000">
             <span>
                 <div>
@@ -528,6 +544,10 @@
             document.querySelector("loading").style = "display: grid";
             return document.querySelector("loading").classList.remove("hidden");
          }, false);
+    </script>
+    <script defer async>
+        Intense(document.querySelector("#comic1"));
+        Intense(document.querySelector("#comic2"));
     </script>
     <script defer src="./high-contrast.js"></script>
     <script src="./animate.js" defer></script>

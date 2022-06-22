@@ -46,6 +46,25 @@ nav a.active{
     font-weight: bold;
 }
 
+#comicWrapper{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#comicWrapper div{
+  display: block;
+  width: 20%;
+  margin-inline: 10px;
+  min-width: 320px;
+}
+#comicWrapper > div > img{
+  width: 100%;
+  cursor: url('./images/plus_cursor.png') 25 25, auto;
+}
+
 body{
     grid-template-columns: 1fr;
     grid-template-rows: max-content;
